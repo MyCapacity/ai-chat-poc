@@ -1,0 +1,8 @@
+# Alert Job Schedule template (YAML)
+{{dataset_name_alert_name}}:
+    schedules:
+        dev: {{cron_schedule}}
+        int: {{cron_schedule}}
+        prod: {{cron_schedule}}
+
+    sql: {{alert_sql}}

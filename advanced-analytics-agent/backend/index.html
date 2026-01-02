@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Analytics Agent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      body {
+        background-color: #fff;
+        color: #111;
+      }
+      .wrapper {
+        padding: 1em;
+        max-width: 740px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #messages {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 0;
+      }
+      #chat {
+        display: grid;
+        grid-template-rows: auto auto;
+        row-gap: 0.2em;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      .msg {
+        padding: 1.5em;
+        max-width: 50%;
+        padding: 0.5em;
+        border-radius: 2em;
+        margin-bottom: 0.5em;
+      }
+      .msg-user {
+        justify-self: end;
+        background-color: #2222ff;
+        color: #fff;
+      }
+      .msg-text {
+        justify-self: start;
+        background-color: #eee;
+        color: #111;
+      }
+      .msg-thought {
+        justify-self: start;
+        background-color: #eee;
+        color: #0000cc;
+      }
+
+      button {
+        border: 0;
+        border-radius: 0.1em;
+        padding: 0.25em 0.5em;
+        color: #fff;
+        background-color: #2222ff;
+      }
+      button:hover {
+        background-color: #4444ff;
+      }
+      button:active {
+        background-color: #0000dd;
+      }
+      textarea {
+        height: 3.0em;
+      }
+    </style>
+    <script>
+      const sessionId = "session_" + Date.now()
+      const socket = new WebSocket(`${window.location.protocol == 'https:' ? 'wss' : 'ws'}://${window.location.host}/ws/${sessionId}`);
+      var messageDone = true;
+      var partialMessage = ""
+      var messages = []
+
+      function buildMessages() {
+        const messageDiv = document.querySelector("#messages");
+        messageDiv.innerHTML = "";
+        for (message of messages) {
+          var cls = "";
+          switch (message.type) {
+            case "THOUGHT": cls = "msg-thought"; break;
+            case "TEXT": cls = "msg-text"; break;
+            case "USER": cls = "msg-user"; break;
+          }
+          messageDiv.innerHTML += `<p class="msg ${cls}">${message.text}<p>`
+        }
+        if (!messageDone) {
+          messageDiv.innerHTML += `<p class="msg msg-text">${partialMessage != "" ? partialMessage : "..."}<p>`
+        }
+      }
+
+      socket.onopen = (event) => {
+        console.log("Opened");
+      };
+      socket.onmessage = (event) => {
+        console.log(`Got message ${event.data}`)
+        const data = JSON.parse(event.data);
+        var content = data?.content;
+        var parts = content?.parts; 
+        if (content == null || parts == null) {
+          return;
+        }
+        var isText = false;
+        for (const part of parts) {
+          if ("functionResponse" in part) {
+            const data = part.functionResponse;
+            const functionName = data.name;
+            const text = data.response.result;
+            messages.push({"type": "THOUGHT", "text": `${functionName}: ${text}`})
+          }
+          if ("functionCall" in part) {
+            const data = part.functionCall;
+            const functionName = data.name;
+            const text = data.args.question;
+            messages.push({"type": "THOUGHT", "text": `calling ${functionName}: ${text}`})
+          }
+          if ("text" in part && data?.partial === true) {
+            console.log(part.text)
+            partialMessage += part.text;
+            isText = true;
+          }
+        }
+        if (isText && data?.finishReason != null) {
+          messages.push({"type": "TEXT", "text": partialMessage});
+          partialMessage = "";
+          messageDone = true;
+        }
+
+        buildMessages();
+      };
+      socket.onclose = (event) => {
+        console.log("Connection closed");
+      };
+
+      window.onload = () => {
+        const sendButton = document.querySelector("#send");
+        const msgbox = document.querySelector("#msgbox");
+        sendButton.onclick = (event) => {
+          if (msgbox.value === "") {
+            return;
+          }
+          messageDone = false;
+          socket.send(msgbox.value);
+          messages.push({"type": "USER", "text": msgbox.value})
+          buildMessages();
+          msgbox.value = "";
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+    <div id = "sessions">
+
+    </div>
+      <h1>Advanced Analytics AI</h1>
+      <div id="messages"></div>
+      <div id="chat">
+        <textarea id="msgbox"></textarea>
+        <button id="send">Send</button>
+      </div>
+    </div>
+  </body>
+</html>

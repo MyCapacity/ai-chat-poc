@@ -1,0 +1,12 @@
+#Usage: gcloud beta run compose up compose.yaml --region=australia-southeast1
+services:
+  advanced-analytics-ui:
+    build: ./ui
+    ports:
+      - 8080:8080
+  advanced-analytics-backend:
+    build: ./backend
+    env_file:
+      - backend/.env
+    ports:
+      - 8081:8081

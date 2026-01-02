@@ -1,0 +1,465 @@
+== Info: Host pypi.org:443 was resolved.
+== Info: IPv6: 2a04:4e42:400::223, 2a04:4e42:600::223, 2a04:4e42::223, 2a04:4e42:200::223
+== Info: IPv4: 151.101.0.223, 151.101.128.223, 151.101.64.223, 151.101.192.223
+== Info:   Trying [2a04:4e42:400::223]:443...
+== Info: connect to 2a04:4e42:400::223 port 443 from :: port 58551 failed: Address not available
+== Info:   Trying [2a04:4e42:600::223]:443...
+== Info:   Trying 151.101.0.223:443...
+== Info: schannel: disabled automatic use of client certificate
+== Info: ALPN: curl offers http/1.1
+== Info: ALPN: server accepted http/1.1
+== Info: Connected to pypi.org (151.101.0.223) port 443
+== Info: using HTTP/1.x
+=> Send header, 72 bytes (0x48)
+0000: GET / HTTP/1.1
+0010: Host: pypi.org
+0020: User-Agent: curl/8.13.0
+0039: Accept: */*
+0046: 
+== Info: schannel: remote party requests renegotiation
+== Info: schannel: renegotiating SSL/TLS connection
+== Info: schannel: SSL/TLS connection renegotiated
+== Info: Request completely sent off
+<= Recv header, 17 bytes (0x11)
+0000: HTTP/1.1 200 OK
+<= Recv header, 24 bytes (0x18)
+0000: Connection: keep-alive
+<= Recv header, 23 bytes (0x17)
+0000: Content-Length: 23271
+<= Recv header, 43 bytes (0x2b)
+0000: referrer-policy: origin-when-cross-origin
+<= Recv header, 32 bytes (0x20)
+0000: etag: "2YCZ6bgALhxKtbU2ipoUPQ"
+<= Recv header, 1467 bytes (0x5bb)
+0000: content-security-policy: base-uri 'self'; connect-src 'self' htt
+0040: ps://api.github.com/repos/ https://api.github.com/search/issues 
+0080: https://gitlab.com/api/ https://analytics.python.org fastly-insi
+00c0: ghts.com *.fastly-insights.com *.ethicalads.io https://api.pwned
+0100: passwords.com https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/sre
+0140: /mathmaps/ https://2p66nmmycsj3.statuspage.io; default-src 'none
+0180: '; font-src 'self' fonts.gstatic.com https://fonts.cdnfonts.com;
+01c0:  form-action 'self' https://checkout.stripe.com https://billing.
+0200: stripe.com; frame-ancestors 'none'; frame-src 'none'; img-src 's
+0240: elf' https://pypi-camo.freetls.fastly.net/ *.fastly-insights.com
+0280:  *.ethicalads.io ethicalads.blob.core.windows.net; script-src 's
+02c0: elf' https://analytics.python.org *.fastly-insights.com *.ethica
+0300: lads.io https://donate.python.org 'sha256-U3hKDidudIaxBDEzwGJApJ
+0340: gPEf2mWk6cfMWghrAa6i0=' https://cdn.jsdelivr.net/npm/mathjax@3.2
+0380: .2/ 'sha256-1CldwzdEg2k1wTmf7s5RWVd7NMXI/7nxxjJM2C4DqII=' 'sha25
+03c0: 6-0POaN8stWYQxhzjKS+/eOfbbJ/u4YHO5ZagJvLpMypo='; style-src 'self
+0400: ' fonts.googleapis.com *.ethicalads.io donate.python.org https:/
+0440: /fonts.cdnfonts.com 'sha256-2YHqZokjiizkHi1Zt+6ar0XJ0OeEy/egBnlm
+0480: +MDMtrM=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 
+04c0: 'sha256-JLEjeN9e5dGsz5475WyRaoA4eQOdNPxDIeUhclnJDCE=' 'sha256-mQ
+0500: yxHEuwZJqpxCw3SLmc4YOySNKXunyu2Oiz1r3/wAE=' 'sha256-OCf+kv5Asiwp
+0540: ++8PIevKBYSgnNLNUZvxAp4a7wMLuKA=' 'sha256-h5LOiLhk6wiJrGsG5ItM0K
+0580: imwzWQH/yAcmoJDJL//bY='; worker-src *.fastly-insights.com
+<= Recv header, 40 bytes (0x28)
+0000: content-type: text/html; charset=UTF-8
+<= Recv header, 22 bytes (0x16)
+0000: Accept-Ranges: bytes
+<= Recv header, 37 bytes (0x25)
+0000: Date: Wed, 31 Dec 2025 03:15:45 GMT
+<= Recv header, 87 bytes (0x57)
+0000: X-Served-By: cache-iad-kjyo7100025-IAD, cache-iad-kjyo7100172-IA
+0040: D, cache-mel11230-MEL
+<= Recv header, 25 bytes (0x19)
+0000: X-Cache: MISS, HIT, HIT
+<= Recv header, 24 bytes (0x18)
+0000: X-Cache-Hits: 0, 12, 0
+<= Recv header, 37 bytes (0x25)
+0000: X-Timer: S1767150945.373097,VS0,VE1
+<= Recv header, 31 bytes (0x1f)
+0000: Vary: Cookie, Accept-Encoding
+<= Recv header, 73 bytes (0x49)
+0000: Strict-Transport-Security: max-age=31536000; includeSubDomains; 
+0040: preload
+<= Recv header, 23 bytes (0x17)
+0000: X-Frame-Options: deny
+<= Recv header, 33 bytes (0x21)
+0000: X-XSS-Protection: 1; mode=block
+<= Recv header, 33 bytes (0x21)
+0000: X-Content-Type-Options: nosniff
+<= Recv header, 41 bytes (0x29)
+0000: X-Permitted-Cross-Domain-Policies: none
+<= Recv header, 611 bytes (0x263)
+0000: Permissions-Policy: publickey-credentials-create=(self),publicke
+0040: y-credentials-get=(self),accelerometer=(),ambient-light-sensor=(
+0080: ),autoplay=(),battery=(),camera=(),display-capture=(),document-d
+00c0: omain=(),encrypted-media=(),execution-while-not-rendered=(),exec
+0100: ution-while-out-of-viewport=(),fullscreen=(),gamepad=(),geolocat
+0140: ion=(),gyroscope=(),hid=(),identity-credentials-get=(),idle-dete
+0180: ction=(),local-fonts=(),magnetometer=(),microphone=(),midi=(),ot
+01c0: p-credentials=(),payment=(),picture-in-picture=(),screen-wake-lo
+0200: ck=(),serial=(),speaker-selection=(),storage-access=(),usb=(),we
+0240: b-share=(),xr-spatial-tracking=()
+<= Recv header, 2 bytes (0x2)
+0000: 
+<= Recv data, 13412 bytes (0x3464)
+0000: <!DOCTYPE html>.<html lang="en" dir="ltr">.  <head>.    <meta ch
+0040: arset="utf-8">.    <meta http-equiv="X-UA-Compatible" content="I
+0080: E=edge">.    <meta name="viewport" content="width=device-width, 
+00c0: initial-scale=1">.    <meta name="defaultLanguage" content="en">
+0100: .    <meta name="availableLanguages".          content="en, es, 
+0140: fr, ja, pt_BR, uk, el, de, zh_Hans, zh_Hant, ru, he, eo, ko">.  
+0180:   <title>PyPI .. The Python Package Index</title>.    <meta name
+01c0: ="description".          content="The Python Package Index (PyPI
+0200: ) is a repository of software for the Python programming languag
+0240: e.">.    <link rel="stylesheet".          href="/static/css/ware
+0280: house-ltr.22087a58.css">.    <link rel="stylesheet".          hr
+02c0: ef="/static/css/fontawesome.080e1050.css">.    <link rel="styles
+0300: heet".          href="https://fonts.googleapis.com/css?family=So
+0340: urce+Sans+3:400,400italic,600,600italic,700,700italic%7CSource+C
+0380: ode+Pro:500">.    <noscript>.      <link rel="stylesheet".      
+03c0:       href="/static/css/noscript.0673c9ea.css">.    </noscript>.
+0400:     <link rel="icon".          href="/static/images/favicon.3554
+0440: 9fe8.ico".          type="image/x-icon">.    <link rel="alternat
+0480: e".          type="application/rss+xml".          title="RSS: 40
+04c0:  latest updates".          href="/rss/updates.xml">.    <link re
+0500: l="alternate".          type="application/rss+xml".          tit
+0540: le="RSS: 40 newest packages".          href="/rss/packages.xml">
+0580: .      <link rel="canonical" href="https://pypi.org/">.    <meta
+05c0:  property="og:url".          content="https://pypi.org/">.    <m
+0600: eta property="og:site_name" content="PyPI">.    <meta property="
+0640: og:type" content="website">.    <meta property="og:image".      
+0680:     content="https://pypi.org/static/images/twitter.abaf4b19.web
+06c0: p">.    <meta property="og:title".          content="">.    <met
+0700: a property="og:description" content="The Python Package Index (P
+0740: yPI) is a repository of software for the Python programming lang
+0780: uage.">.    <link rel="search".          type="application/opens
+07c0: earchdescription+xml".          title="PyPI".          href="/op
+0800: ensearch.xml">.    <script defer src="/static/js/warehouse.57db4
+0840: 6bb.js">.    </script>.      <script defer.              data-do
+0880: main="pypi.org".              src="https://analytics.python.org/
+08c0: js/script.js"></script>.    <script defer.            src="https
+0900: ://www.fastly-insights.com/insights.js?k=6a52360a-f306-421e-8ed5
+0940: -7417d0d4a4e9&dnt=true"></script>.    <script async.            
+0980: src="https://media.ethicalads.io/media/client/v1.4.0/ethicalads.
+09c0: min.js".            integrity="sha256-U3hKDidudIaxBDEzwGJApJgPEf
+0a00: 2mWk6cfMWghrAa6i0= sha384-UcmsCqcNRSLW/dV3Lo1oCi2/VaurXbib6p4HyU
+0a40: EOeIa/4OpsrnucrugAefzVZJfI sha512-q4t1L4xEjGV2R4hzqCa41P8jrgFUS8
+0a80: xTb8rdNv4FGvw7FpydVj/kkxBJHOiaoxHa8olCcx1Slk9K+3sNbsM4ug==".    
+0ac0:         crossorigin="anonymous"></script>.    <script async.    
+0b00:         src="https://donate.python.org/fundraiser-banner/fundrai
+0b40: ser-banner.js"></script>.  </head>.  <body data-controller="view
+0b80: port-toggle".        data-allowed-domains="9c474076b886a15f2c398
+0bc0: b09675641db83dfb6505787fea037f1103fd71994ec,934919e10c47db94f160
+0c00: 8659fcb41531c94b0267e7bb8a4739cd27f3dafa616c,eb25237f4fa817f4d78
+0c40: 7bbfbc7688918c024c2e72397961a6a010ba33c52c9cd,e4e6d852baa92fddf9
+0c80: e89ef9a05dfa5863a59f006fbedf2ffabe5cb7ccb1c6bb,d988e63efad113f1d
+0cc0: 484c534a3802753596e2bcccbc59eb3dc7bdcf0d07abab7".        data-re
+0d00: quest-nonce="Tv7rY-YeCFuvhjZGbpGcIfXj3MoCmAscEDX9m5dtxhk">.     
+0d40:  <!-- Accessibility: this link should always be the first piece 
+0d80: of content inside the body-->.      <a href="#content" class="sk
+0dc0: ip-to-content">Skip to main content</a>.      <button type="butt
+0e00: on".              class="button button--primary button--switch-t
+0e40: o-mobile hidden".              data-viewport-toggle-target="swit
+0e80: chToMobile".              data-action="viewport-toggle#switchToM
+0ec0: obile">Switch to mobile version</button>.      <div id="sticky-n
+0f00: otifications" class="stick-to-top js-stick-to-top">.        <!--
+0f40:  Add browser warning. Will show for ie9 and below -->.        <!
+0f80: --[if IE]>.      <div class="notification-bar notification-bar--
+0fc0: warning" role="status">.        <span class="notification-bar__i
+1000: con">.          <i class="fa fa-exclamation-triangle" aria-hidde
+1040: n="true"></i>.          <span class="sr-only">Warning</span>.   
+1080:      </span>.        <span class="notification-bar__message">You
+10c0:  are using an unsupported browser, upgrade to a newer version.</
+1100: span>.      </div>.      <![endif]-->.        <noscript>.       
+1140:    <div class="notification-bar notification-bar--warning" role=
+1180: "status">.            <span class="notification-bar__icon">.    
+11c0:           <i class="fa fa-exclamation-triangle" aria-hidden="tru
+1200: e"></i>.              <span class="sr-only">Warning</span>.     
+1240:        </span>.            <span class="notification-bar__messag
+1280: e">Some features may not work without JavaScript. Please try ena
+12c0: bling it if you encounter problems.</span>.          </div>.    
+1300:     </noscript>.<div data-html-include="/_includes/unauthed/noti
+1340: fication-banners/"></div>    </div>.<div data-html-include="/_in
+1380: cludes/unauthed/flash-messages/"></div><div data-html-include="/
+13c0: _includes/authed/session-notifications/"></div><header class="si
+1400: te-header ">.  <div class="site-container">.    <div class="spli
+1440: t-layout">.  <div>.    <a class="site-header__logo" href="/">.  
+1480:     <img alt="PyPI".           src="/static/images/logo-small.89
+14c0: 98e9d1.svg">.    </a>.  </div>.<div data-html-include="/_include
+1500: s/authed/current-user-indicator/">      <div id="user-indicator"
+1540: .       class="horizontal-menu horizontal-menu--light horizontal
+1580: -menu--tall">.    <nav class="horizontal-menu horizontal-menu--l
+15c0: ight horizontal-menu--tall hide-on-tablet".         aria-label="
+1600: Main navigation">.      <ul>.        <li class="horizontal-menu_
+1640: _item">.          <a href="/help/" class="horizontal-menu__link"
+1680: >Help</a>.        </li>.        <li class="horizontal-menu__item
+16c0: ">.          <a href="https://docs.pypi.org/" class="horizontal-
+1700: menu__link">Docs</a>.        </li>.        <li class="horizontal
+1740: -menu__item">.          <a href="/sponsors/".             class=
+1780: "horizontal-menu__link">Sponsors</a>.        </li>.        <li c
+17c0: lass="horizontal-menu__item">.          <a href="/account/login/
+1800: ?next=https%3A%2F%2Fpypi.org%2F".             class="horizontal-
+1840: menu__link">Log in</a>.        </li>.        <li class="horizont
+1880: al-menu__item">.          <a href="/account/register/".         
+18c0:     class="horizontal-menu__link">Register</a>.        </li>.   
+1900:    </ul>.    </nav>.    <nav class="dropdown dropdown--on-menu h
+1940: idden show-on-tablet".         aria-label="Main navigation">.   
+1980:    <button type="button".              class="horizontal-menu__l
+19c0: ink dropdown__trigger".              aria-haspopup="true".      
+1a00:         aria-expanded="false".              aria-label="View men
+1a40: u">.Menu        <span class="dropdown__trigger-caret">.         
+1a80:  <i class="fa fa-caret-down" aria-hidden="true"></i>.        </s
+1ac0: pan>.      </button>.      <ul class="dropdown__content".       
+1b00:    aria-hidden="true".          aria-label="Main menu">.        
+1b40: <li>.          <a class="dropdown__link" href="/help/">Help</a>.
+1b80:         </li>.        <li>.          <a class="dropdown__link" h
+1bc0: ref="https://docs.pypi.org/">Docs</a>.        </li>.        <li>
+1c00: .          <a class="dropdown__link" href="/sponsors/">Sponsors<
+1c40: /a>.        </li>.        <li>.          <a class="dropdown__lin
+1c80: k".             href="/account/login/">Log in</a>.        </li>.
+1cc0:         <li>.          <a class="dropdown__link".             hr
+1d00: ef="/account/register/">Register</a>.        </li>.      </ul>. 
+1d40:    </nav>.  </div>.</div>  </div>.</div>.</header>.<main id="con
+1d80: tent">.  <div class="banner">.    <div class="homepage-banner">.
+1dc0:       <h1 class="homepage-banner__title">Find, install and publi
+1e00: sh Python packages with the Python Package Index</h1>.      <for
+1e40: m class="search-form search-form--large search-form--fullwidth".
+1e80:             action="/search/".            role="search">.       
+1ec0:  <label for="search" class="sr-only">Search PyPI</label>.       
+1f00:  <!-- The following input is intentionally not autofocused, see 
+1f40: https://github.com/pypi/warehouse/issues/6088 for more details -
+1f80: ->.        <input id="search".               class="search-form_
+1fc0: _search large-input".               type="text".               n
+2000: ame="q".               placeholder="Type '/' to search projects"
+2040: .               autocomplete="off".               autocapitalize
+2080: ="off".               spellcheck="false".               data-con
+20c0: troller="search-focus".               data-action="keydown@windo
+2100: w->search-focus#focusSearchField".               data-search-foc
+2140: us-target="searchField">.        <button type="submit" class="se
+2180: arch-form__button">.          <i class="fa fa-search" aria-hidde
+21c0: n="true"></i>.          <span class="sr-only">Search</span>.    
+2200:     </button>.      </form>.      <p class="homepage-banner__bro
+2240: wse">.Or <a href="/search/">browse projects</a>      </p>.    </
+2280: div>.  </div>.  <div class="horizontal-section horizontal-sectio
+22c0: n--grey horizontal-section--thin horizontal-section--statistics"
+2300: >.    <div class="statistics-bar">.      <p class="statistics-ba
+2340: r__statistic">.718,895 projects    </p>.    <p class="statistics
+2380: -bar__statistic">.7,838,700 releases  </p>.  <p class="statistic
+23c0: s-bar__statistic">.16,642,114 files</p>.<p class="statistics-bar
+2400: __statistic">.992,382 users</p>.</div>.</div>.<div class="horizo
+2440: ntal-section">.  <div class="about-pypi">.    <div class="about-
+2480: pypi__logo">.      <img alt="".           src="/static/images/lo
+24c0: go-large.516e776d.svg".           loading="lazy">.    </div>.   
+2500:  <div class="about-pypi__text">.      <p class="lede-paragraph">
+2540: .The Python Package Index (PyPI) is a repository of software for
+2580:  the Python programming language.      </p>.      <p>.PyPI helps
+25c0:  you find and install software developed and shared by the Pytho
+2600: n community.        <a href="https://packaging.python.org/tutori
+2640: als/installing-packages/".           title="External link".     
+2680:       target="_blank".           rel="noopener">Learn about inst
+26c0: alling packages</a>..      </p>.      <p>.Package authors use Py
+2700: PI to distribute their software.        <a href="https://packagi
+2740: ng.python.org/tutorials/packaging-projects/".           title="E
+2780: xternal link".           target="_blank".           rel="noopene
+27c0: r">Learn how to package your Python code for PyPI</a>..      </p
+2800: >.    </div>.  </div>.</div>.</main>.<footer class="footer">.  <
+2840: div class="footer__logo">.    <img src="/static/images/white-cub
+2880: e.2351a86c.svg".         alt="".         class="-js-white-cube">
+28c0: .  </div>.  <div class="footer__menus">.    <div class="footer__
+2900: menu">.      <h2>Help</h2>.      <nav aria-label="Help navigatio
+2940: n">.        <ul>.          <li>.            <a href="https://pac
+2980: kaging.python.org/tutorials/installing-packages/".              
+29c0:  title="External link".               target="_blank".          
+2a00:      rel="noopener">Installing packages</a>.          </li>.    
+2a40:       <li>.            <a href="https://packaging.python.org/tut
+2a80: orials/packaging-projects/".               title="External link"
+2ac0: .               target="_blank".               rel="noopener">Up
+2b00: loading packages</a>.          </li>.          <li>.            
+2b40: <a href="https://packaging.python.org/".               title="Ex
+2b80: ternal link".               target="_blank".               rel="
+2bc0: noopener">User guide</a>.          </li>.          <li>.        
+2c00:     <a href="https://www.python.org/dev/peps/pep-0541/".        
+2c40:        title="External link".               target="_blank".    
+2c80:            rel="noopener">Project name retention</a>.          <
+2cc0: /li>.          <li>.            <a href="/help/">FAQs</a>.      
+2d00:     </li>.        </ul>.      </nav>.    </div>.    <div class="
+2d40: footer__menu">.      <h2>About PyPI</h2>.      <nav aria-label="
+2d80: About PyPI navigation">.        <ul>.          <li>.            
+2dc0: <a href="https://blog.pypi.org".               title="External l
+2e00: ink".               target="_blank".               rel="noopener
+2e40: ">PyPI Blog</a>.          </li>.          <li>.            <a hr
+2e80: ef="https://dtdg.co/pypi".               title="External link". 
+2ec0:               target="_blank".               rel="noopener">Infr
+2f00: astructure dashboard</a>.          </li>.          <li>.        
+2f40:     <a href="/stats/">Statistics</a>.          </li>.          <
+2f80: li>.            <a href="/trademarks/">Logos & trademarks</a>.  
+2fc0:         </li>.          <li>.            <a href="/sponsors/">Ou
+3000: r sponsors</a>.          </li>.        </ul>.      </nav>.    </
+3040: div>.    <div class="footer__menu">.      <h2>Contributing to Py
+3080: PI</h2>.      <nav aria-label="How to contribute navigation">.  
+30c0:       <ul>.          <li>.            <a href="/help/#feedback">
+3100: Bugs and feedback</a>.          </li>.          <li>.           
+3140:  <a href="https://github.com/pypi/warehouse".               titl
+3180: e="External link".               target="_blank".               
+31c0: rel="noopener">Contribute on GitHub</a>.          </li>.        
+3200:   <li>.            <a href="https://hosted.weblate.org/projects/
+3240: pypa/warehouse/".               title="External link".          
+3280:      target="_blank".               rel="noopener">Translate PyP
+32c0: I</a>.          </li>.          <li>.            <a href="/spons
+3300: ors/">Sponsor PyPI</a>.          </li>.          <li>.          
+3340:   <a href="https://github.com/pypi/warehouse/graphs/contributors
+3380: ".               title="External link".               target="_b
+33c0: lank".               rel="noopener">Development credits</a>.    
+3400:       </li>.        </ul>.      </nav>.    </div>.    <div class
+3440: ="footer__menu">.      <h2>Using PyP
+<= Recv data, 9859 bytes (0x2683)
+0000: I</h2>.      <nav aria-label="Using PyPI navigation">.        <u
+0040: l>.          <li>.            <a href="https://policies.python.o
+0080: rg/pypi.org/Terms-of-Service/".               title="External li
+00c0: nk".               target="_blank".               rel="noopener"
+0100: >Terms of Service</a>.          </li>.          <li>.           
+0140:  <a href="/security/">Report security issue</a>.          </li>.
+0180:           <li>.            <a href="https://policies.python.org/
+01c0: python.org/code-of-conduct/".               title="External link
+0200: ".               target="_blank".               rel="noopener">C
+0240: ode of conduct</a>.          </li>.          <li>.            <a
+0280:  href="https://policies.python.org/pypi.org/Privacy-Notice/".   
+02c0:             title="External link".               target="_blank"
+0300: .               rel="noopener">Privacy Notice</a>.          </li
+0340: >.          <li>.            <a href="https://policies.python.or
+0380: g/pypi.org/Acceptable-Use-Policy/".               title="Externa
+03c0: l link".               target="_blank".               rel="noope
+0400: ner">Acceptable Use Policy</a>.          </li>.        </ul>.   
+0440:    </nav>.    </div>.  </div>.  <hr class="footer__divider">.  <
+0480: div class="footer__text">.      <p>.Status:<a href="https://stat
+04c0: us.python.org/".   title="External link".   target="_blank".   r
+0500: el="noopener">.        <span data-statuspage-domain="https://2p6
+0540: 6nmmycsj3.statuspage.io">all systems operational</span></a>.    
+0580: </p>.  <p>.Developed and maintained by the Python community, for
+05c0:  the Python community.    <br>.    <a href="https://donate.pypi.
+0600: org">Donate today!</a>.  </p>.  <p>.    "PyPI", "Python Package 
+0640: Index", and the blocks logos are registered <a href="/trademarks
+0680: /">trademarks</a> of the <a href="https://www.python.org/psf-lan
+06c0: ding" target="_blank" rel="noopener">Python Software Foundation<
+0700: /a>..    <br>.  </p>.  <p>.    .. 2025 <a href="https://www.pyth
+0740: on.org/psf-landing/".    title="External link".    target="_blan
+0780: k".    rel="noopener">Python Software Foundation</a>.    <br>.  
+07c0:   <a href="/sitemap/">Site map</a>.  </p>.</div>.<div class="cen
+0800: tered hide-on-desktop">.  <button type="button".          class=
+0840: "button button--switch-to-desktop hidden".          data-viewpor
+0880: t-toggle-target="switchToDesktop".          data-action="viewpor
+08c0: t-toggle#switchToDesktop">Switch to desktop version</button>.</d
+0900: iv>.</footer>.<div class="language-switcher">.  <form action="/l
+0940: ocale/">.    <ul>.        <li>.          <button class="language
+0980: -switcher__selected"                  name="locale_id".         
+09c0:          value="en".                  type="submit">English</but
+0a00: ton>.        </li>.        <li>.          <button               
+0a40:     name="locale_id".                  value="es".              
+0a80:     type="submit">espa..ol</button>.        </li>.        <li>. 
+0ac0:          <button                   name="locale_id".            
+0b00:       value="fr".                  type="submit">fran..ais</butt
+0b40: on>.        </li>.        <li>.          <button                
+0b80:    name="locale_id".                  value="ja".               
+0bc0:    type="submit">.........</button>.        </li>.        <li>. 
+0c00:          <button                   name="locale_id".            
+0c40:       value="pt_BR".                  type="submit">portugu..s (
+0c80: Brasil)</button>.        </li>.        <li>.          <button   
+0cc0:                 name="locale_id".                  value="uk".  
+0d00:                 type="submit">....................</button>.    
+0d40:     </li>.        <li>.          <button                   name=
+0d80: "locale_id".                  value="el".                  type=
+0dc0: "submit">................</button>.        </li>.        <li>.  
+0e00:         <button                   name="locale_id".             
+0e40:      value="de".                  type="submit">Deutsch</button>
+0e80: .        </li>.        <li>.          <button                   
+0ec0: name="locale_id".                  value="zh_Hans".             
+0f00:      type="submit">...... (......)</button>.        </li>.      
+0f40:   <li>.          <button                   name="locale_id".    
+0f80:               value="zh_Hant".                  type="submit">..
+0fc0: .... (......)</button>.        </li>.        <li>.          <but
+1000: ton                   name="locale_id".                  value="
+1040: ru".                  type="submit">..............</button>.    
+1080:     </li>.        <li>.          <button                   name=
+10c0: "locale_id".                  value="he".                  type=
+1100: "submit">..........</button>.        </li>.        <li>.        
+1140:   <button                   name="locale_id".                  v
+1180: alue="eo".                  type="submit">Esperanto</button>.   
+11c0:      </li>.        <li>.          <button                   name
+1200: ="locale_id".                  value="ko".                  type
+1240: ="submit">.........</button>.        </li>.    </ul>.  </form>.<
+1280: /div>.<div class="sponsors">.  <p class="sponsors__title">Suppor
+12c0: ted by</p>.  <div class="sponsors__divider"></div>.        <a cl
+1300: ass="sponsors__sponsor".           target="_blank".           re
+1340: l="noopener".           href="https://aws.amazon.com/">.        
+1380:   <img class=sponsors__image src="https://pypi-camo.freetls.fast
+13c0: ly.net/ed7074cadad1a06f56bc520ad9bd3e00d0704c5b/68747470733a2f2f
+1400: 73746f726167652e676f6f676c65617069732e636f6d2f707970692d61737365
+1440: 74732f73706f6e736f726c6f676f732f6177732d77686974652d6c6f676f2d74
+1480: 43615473387a432e706e67" alt="" loading=lazy>.          <span cla
+14c0: ss="sponsors__name">AWS</span>.          <span class="sponsors__
+1500: service">.              Cloud computing and Security Sponsor.   
+1540:        </span>.        </a>.        <a class="sponsors__sponsor"
+1580: .           target="_blank".           rel="noopener".          
+15c0:  href="https://www.datadoghq.com/">.          <img class=sponsor
+1600: s__image src="https://pypi-camo.freetls.fastly.net/8855f7c063a3b
+1640: db5b0ce8d91bfc50cf851cc5c51/68747470733a2f2f73746f726167652e676f
+1680: 6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f72
+16c0: 6c6f676f732f64617461646f672d77686974652d6c6f676f2d6668644c4e666c
+1700: 6f2e706e67" alt="" loading=lazy>.          <span class="sponsors
+1740: __name">Datadog</span>.          <span class="sponsors__service"
+1780: >.              Monitoring.          </span>.        </a>.      
+17c0:   <a class="sponsors__sponsor".           target="_blank".      
+1800:      rel="noopener".           href="https://depot.dev">.       
+1840:    <img class=sponsors__image src="https://pypi-camo.freetls.fas
+1880: tly.net/60f709d24f3e4d469f9adc77c65e2f5291a3d165/68747470733a2f2
+18c0: f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736
+1900: 574732f73706f6e736f726c6f676f732f6465706f742d77686974652d6c6f676
+1940: f2d7038506f476831302e706e67" alt="" loading=lazy>.          <spa
+1980: n class="sponsors__name">Depot</span>.          <span class="spo
+19c0: nsors__service">.              Continuous Integration.          
+1a00: </span>.        </a>.        <a class="sponsors__sponsor".      
+1a40:      target="_blank".           rel="noopener".           href="
+1a80: https://www.fastly.com/">.          <img class=sponsors__image s
+1ac0: rc="https://pypi-camo.freetls.fastly.net/df6fe8829cbff2d7f668d98
+1b00: 571df1fd011f36192/68747470733a2f2f73746f726167652e676f6f676c6561
+1b40: 7069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f73
+1b80: 2f666173746c792d77686974652d6c6f676f2d65684d3077735f6f2e706e67" 
+1bc0: alt="" loading=lazy>.          <span class="sponsors__name">Fast
+1c00: ly</span>.          <span class="sponsors__service">.           
+1c40:    CDN.          </span>.        </a>.        <a class="sponsors
+1c80: __sponsor".           target="_blank".           rel="noopener".
+1cc0:            href="https://careers.google.com/">.          <img cl
+1d00: ass=sponsors__image src="https://pypi-camo.freetls.fastly.net/42
+1d40: 0cc8cf360bac879e24c923b2f50ba7d1314fb0/68747470733a2f2f73746f726
+1d80: 167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f737
+1dc0: 06f6e736f726c6f676f732f676f6f676c652d77686974652d6c6f676f2d61673
+1e00: 4424e3774332e706e67" alt="" loading=lazy>.          <span class=
+1e40: "sponsors__name">Google</span>.          <span class="sponsors__
+1e80: service">.              Download Analytics.          </span>.   
+1ec0:      </a>.        <a class="sponsors__sponsor".           target
+1f00: ="_blank".           rel="noopener".           href="https://www
+1f40: .pingdom.com/">.          <img class=sponsors__image src="https:
+1f80: //pypi-camo.freetls.fastly.net/d01053c02f3a626b73ffcb06b96367fdb
+1fc0: bf9e230/68747470733a2f2f73746f726167652e676f6f676c65617069732e63
+2000: 6f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f70696e67
+2040: 646f6d2d77686974652d6c6f676f2d67355831547546362e706e67" alt="" l
+2080: oading=lazy>.          <span class="sponsors__name">Pingdom</spa
+20c0: n>.          <span class="sponsors__service">.              Moni
+2100: toring.          </span>.        </a>.        <a class="sponsors
+2140: __sponsor".           target="_blank".           rel="noopener".
+2180:            href="https://sentry.io/for/python/?utm_source=pypi&a
+21c0: mp;utm_medium=paid-community&amp;utm_campaign=python-na-evergree
+2200: n&amp;utm_content=static-ad-pypi-sponsor-learnmore">.          <
+2240: img class=sponsors__image src="https://pypi-camo.freetls.fastly.
+2280: net/67af7117035e2345bacb5a82e9aa8b5b3e70701d/68747470733a2f2f737
+22c0: 46f726167652e676f6f676c65617069732e636f6d2f707970692d61737365747
+2300: 32f73706f6e736f726c6f676f732f73656e7472792d77686974652d6c6f676f2
+2340: d4a2d6b64742d706e2e706e67" alt="" loading=lazy>.          <span 
+2380: class="sponsors__name">Sentry</span>.          <span class="spon
+23c0: sors__service">.              Error logging.          </span>.  
+2400:       </a>.        <a class="sponsors__sponsor".           targe
+2440: t="_blank".           rel="noopener".           href="https://st
+2480: atuspage.io">.          <img class=sponsors__image src="https://
+24c0: pypi-camo.freetls.fastly.net/b611884ff90435a0575dbab7d9b0d3e60f1
+2500: 36466/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f
+2540: 6d2f707970692d6173736574732f73706f6e736f726c6f676f732f7374617475
+2580: 73706167652d77686974652d6c6f676f2d5467476c6a4a2d502e706e67" alt=
+25c0: "" loading=lazy>.          <span class="sponsors__name">StatusPa
+2600: ge</span>.          <span class="sponsors__service">.           
+2640:    Status page.          </span>.        </a>.</div></body>.</ht
+2680: ml>
+== Info: Connection #0 to host pypi.org left intact

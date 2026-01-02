@@ -1,0 +1,16 @@
+# Usage:  docker compose -f compose-dev.yaml up
+services:
+  advanced-analytics-ui:
+    build: ./ui
+    ports:
+      - 8080:8080
+  advanced-analytics-backend:
+    build: ./backend
+    env_file:
+      - backend/.env
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/tmp/creds.json 
+    volumes:
+      - '${APPDATA}\gcloud\application_default_credentials.json:/tmp/creds.json'
+    ports:
+      - 8081:8081

@@ -1,0 +1,3 @@
+google-adk==1.21
+ag-ui-adk==0.4.0
+uvicorn==0.38

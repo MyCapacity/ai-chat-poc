@@ -1,0 +1,46 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.19",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/privacy",
+        "termsOfUseUrl": "https://www.example.com/termofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "gcpbot${{APP_NAME_SUFFIX}}",
+        "full": "full name for gcpbot"
+    },
+    "description": {
+        "short": "short description for gcpbot",
+        "full": "full description for gcpbot"
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [
+        {
+            "botId": "7d809c7d-4461-43ed-8e8c-fad212cf68a1",
+            "scopes": [
+                "personal",
+                "team",
+                "groupChat"
+            ],
+            "supportsFiles": false,
+            "isNotificationOnly": false,
+            "commandLists": [  ]
+        }
+    ],
+    "composeExtensions": [],
+    "configurableTabs": [],
+    "staticTabs": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}

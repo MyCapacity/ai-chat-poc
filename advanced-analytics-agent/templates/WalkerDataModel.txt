@@ -1,0 +1,18 @@
+Walker Digital (WD) Data model : 
+Dimensions:
+Employee:  
+    ddaaswarehousedev.DW_Dimensions.D_Employee_WD
+Table : 
+    ddaaswarehousedev.DW_Dimensions.D_Table_WD
+ 
+Player: 
+    ddaaswarehousedev.DW_Dimensions.D_Player_WD
+ 
+Day: 
+    ddaaswarehousedev.DW_Dimensions.D_Day_V2
+ 
+Fact tables: 
+ddaaswarehousedev.DW_Facts.F_Session_WD 
+    FK: DWPlayerID - player model
+        DWDayId - Day Model
+        DWTableId - Table Model

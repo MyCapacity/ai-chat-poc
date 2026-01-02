@@ -1,0 +1,19 @@
+# Model: Patron Data
+  Location:  AV_PATRON.av_PatronCurrent 
+  Description:  Latest Patron information
+
+
+# Model: Ratings
+  Location:  AV_RATINGS.av_Ratings
+  Description:  Latest gaming and non-gaming ratings
+   - a filter on GamingdateMonth is mandatory to access this data
+   
+
+# Model: Risk Rating 
+  Location:  AV_RISK.av_LatestRiskRating
+  Description:  Latest customer risk ratings 
+
+
+# Model: CRA Risk Ratings
+  Location:  MAN_CRA.av_CRALatestNw
+  Description:  Latest CRA risk evalaution results, RIsk Rating should be case insensitive

@@ -1,0 +1,71 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: advanced-analytics-agent
+  annotations:
+    run.googleapis.com/launch-stage: ALPHA
+    run.googleapis.com/scalingMode: automatic
+  labels:
+    managed-by: runcompose
+spec:
+  template:
+    metadata:
+      annotations:
+        run.googleapis.com/startup-cpu-boost: 'true'
+        run.googleapis.com/execution-environment: 'gen2'
+        # run.googleapis.com/cpu-throttling: 'false'
+      labels:
+        managed-by: runcompose
+    spec:
+      containers:
+      - name: advanced-analytics-backend
+        image: australia-southeast1-docker.pkg.dev/ddaastransformdev/cloud-run-source-deploy/advanced-analytics-agent_advanced-analytics-backend@sha256:8aafc9877cec328134595a16ae8037ad631b23adcbdd7e98b9b8cc7ab6122715
+        env:
+        - name: ANALYTICS_AGENT_MODEL
+          value: "gemini-2.5-flash"
+        - name: ANALYTICS_RAG_CORPUS_NAME
+          value: "projects/ddaastransformdev/locations/us-central1/ragCorpora/576460752303423488"
+        - name: BASELINE_NL2SQL_MODEL
+          value: "gemini-2.5-flash"
+        - name: BIGQUERY_AGENT_MODEL
+          value: "gemini-2.5-flash"
+        - name: BQML_AGENT_MODEL
+          value: "gemini-2.5-flash"
+        - name: BQML_RAG_CORPUS_NAME
+          value: "# Leave this empty as it will be populated automatically"
+        - name: CHASE_NL2SQL_MODEL
+          value: "gemini-2.5-flash"
+        - name: CODE_INTERPRETER_EXTENSION_NAME
+          value: "# Either '' or 'projects/{GOOGLE_CLOUD_PROJECT}/locations/us-central1/extensions/{EXTENSION_ID}'"
+        - name: GOOGLE_GENAI_USE_VERTEXAI
+          value: "1"
+        - name: NL2SQL_METHOD
+          value: "BASELINE"
+        - name: ROOT_AGENT_MODEL
+          value: "gemini-2.5-flash"
+        startupProbe:
+          timeoutSeconds: 240
+          periodSeconds: 240
+          failureThreshold: 1
+          tcpSocket:
+            port: 8081
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+      - name: advanced-analytics-ui
+        image: australia-southeast1-docker.pkg.dev/ddaastransformdev/cloud-run-source-deploy/advanced-analytics-agent_advanced-analytics-ui@sha256:487544a6685c881cb30a52f5d53d5ac8b0f9f8cdf11a98399dfb4b3c00e45fb9
+        env:
+        ports:
+        - containerPort: 8080
+          name: http1
+        startupProbe:
+          timeoutSeconds: 240
+          periodSeconds: 240
+          failureThreshold: 1
+          tcpSocket:
+            port: 8080
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1Gi

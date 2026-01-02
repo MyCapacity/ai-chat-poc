@@ -1,0 +1,16 @@
+# Freshness ALERT Template: 
+SELECT '{{SourceTable}}_{{alert_threshold}}' AlertName,
+    '{{severity}}' AS Severity,
+    '{{project}}' AS DataSource,
+    {{calculated_time_diff}} || ' hours since the last update' AS AlertMessage,
+    CURRENT_DATETIME ('Australia/Melbourne') AS ReportTimeStamp,
+    {{calculated_time_diff}} AS Result
+FROM SourceTable
+WHERE  {{calculated_time_diff}}  >= {{alert_threshold}}
+
+
+# parameters: 
+{{alert_source}} : Table / view source being queried 
+{{alert_threshold}} : threshold value in hours, used to evaluate alert trigger
+{{severity}} : one of the following {{LOW, MEDIUM, HIGH, WARNING, ERROR, INFO}} default : INFO
+{{calculated_time_diff}} : statement to calculate time difference in hours between current time and the target column . if the target column is not a datetime field , try to convert it. 
