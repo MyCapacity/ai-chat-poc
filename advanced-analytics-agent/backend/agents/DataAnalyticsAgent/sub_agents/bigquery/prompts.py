@@ -50,7 +50,7 @@ def return_instructions_bigquery() -> str:
       # Validate the query is valid and does not exceed 50GB data reads before excution
       </TASK> 
       
-      NOTE: by default pass the project_id ddaastransformdev to the execute_sql tool.
+      NOTE: by default pass the project_id metal-being-469310-u5 to the execute_sql tool.
 
       DO NOT RUN ANY QUERY THAT MODIFIES OR DELETES Data
     """

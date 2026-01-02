@@ -15,7 +15,9 @@
 """Database Agent: get data from database (BigQuery) using NL2SQL."""
 
 import os
-
+import json
+import logging
+from typing import Any, Dict, Optional
 from typing import Any, Dict, Optional
 
 from google.adk.agents import Agent
@@ -38,17 +40,66 @@ def setup_before_agent_call(callback_context: CallbackContext) -> None:
     return
 
 
+
+
+logger = logging.getLogger(__name__)
+
 def store_results_in_context(
     tool: BaseTool, args: Dict[str, Any], tool_context: ToolContext, tool_response: Dict
 ) -> Optional[Dict]:
+    """
+    Callback/hook that stores successful query results in tool_context.state.
 
-    # We are setting a state for the data science agent to be able to use the sql
-    # query results as context 
-    if tool.name == "execute_sql":
-        if tool_response["status"] == "SUCCESS":
-            tool_context.state["query_result"] = tool_response["rows"]
+    - Never throws if tool_response shape differs (prevents UI/session crashes).
+    - Stores rows if present; otherwise stores the full response for debugging.
+    """
 
+    # Only handle the BigQuery SQL execution tool
+    if tool.name != "execute_sql":
+        return None
+
+    # Defensive: tool_response might not be a dict in some edge cases
+    if not isinstance(tool_response, dict):
+        tool_context.state["query_result"] = tool_response
+        return None
+
+    status = tool_response.get("status")
+
+    # If status isn't present, don't crash—store raw response so you can inspect it
+    if status is None:
+        tool_context.state["query_result"] = tool_response
+        logger.warning("execute_sql tool_response missing 'status'. Stored raw response.")
+        return None
+
+    # Only store results on success
+    if status == "SUCCESS":
+        rows = tool_response.get("rows")
+
+        # If rows aren't present, store raw response and log keys for debugging
+        if rows is None:
+            tool_context.state["query_result"] = tool_response
+            logger.warning(
+                "execute_sql SUCCESS response missing 'rows'. Keys=%s",
+                list(tool_response.keys())
+            )
+            # Optional: log a short preview (won't blow up on non-serializable types)
+            try:
+                logger.info(
+                    "execute_sql response preview: %s",
+                    json.dumps(tool_response, default=str)[:1500]
+                )
+            except Exception:
+                pass
+            return None
+
+        # Normal path: store rows
+        tool_context.state["query_result"] = rows
+        return None
+
+    # Non-success: store error payload (useful for agent + UI debugging)
+    tool_context.state["query_result"] = tool_response
     return None
+
 
 
 bigquery_tool_filter = ['list_dataset_ids','get_dataset_info','list_table_ids','get_table_info','execute_sql']

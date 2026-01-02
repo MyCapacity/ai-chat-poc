@@ -147,7 +147,7 @@ dev_agent = Agent(
     instruction=return_instructions_root(),
     
     tools=[
-         call_knowledgebase_agent,
+         #call_knowledgebase_agent,
          call_db_agent,
          #call_localfile_agent,
          call_code_executor_agent
