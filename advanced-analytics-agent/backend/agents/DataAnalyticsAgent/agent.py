@@ -32,6 +32,8 @@ from vertexai.preview import reasoning_engines
 from .tools import call_db_agent, call_alert_agent, call_knowledgebase_agent, call_localfile_agent, call_code_executor_agent
 from google.adk.tools.mcp_tool import MCPToolset , StdioConnectionParams
 from mcp import StdioServerParameters
+from .sub_agents import db_agent
+
 date_today = date.today()
 
 
@@ -165,9 +167,12 @@ dev_agent = Agent(
 )
 
 
-root_agent = SequentialAgent(
-    name="DataAnalyticsAgent",
-    sub_agents=[ dev_agent],
-    description="Executes a sequence to retrieve information and process request",
-    # The agents will run in the order provided: Writer -> Reviewer -> Refactorer
-)
+root_agent = db_agent
+
+
+# root_agent = SequentialAgent(
+#     name="DataAnalyticsAgent",
+#     sub_agents=[ dev_agent],
+#     description="Executes a sequence to retrieve information and process request",
+#     # The agents will run in the order provided: Writer -> Reviewer -> Refactorer
+# )

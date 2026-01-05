@@ -44,7 +44,6 @@ async def call_db_agent(
     return db_agent_output
 
 
-
 async def call_alert_agent(
     question: str,
     tool_context: ToolContext,
