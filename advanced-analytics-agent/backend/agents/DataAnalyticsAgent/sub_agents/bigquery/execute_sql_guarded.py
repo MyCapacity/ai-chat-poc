@@ -80,7 +80,7 @@ def execute_sql_guarded(
 
     # -------- 1) DRY RUN --------
     dry_config = bigquery.QueryJobConfig(
-        dry_run=True,
+        dry_run=False,
         use_query_cache=use_query_cache,
         use_legacy_sql=False,
     )
